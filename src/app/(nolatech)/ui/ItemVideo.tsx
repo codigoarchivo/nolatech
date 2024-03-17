@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Play } from '@/components';
+import { ModalVideo, Play } from '@/components';
 import { IListVideo } from '@/interfaces';
 
 export const ItemVideo = (props: IListVideo) => {
@@ -21,6 +21,11 @@ export const ItemVideo = (props: IListVideo) => {
           height='0'
           quality={100}
           sizes='100vw'
+        />
+        <ModalVideo
+          title={''}
+          cancel={'cancel'}
+          className='absolute z-50 w-full h-full'
         />
       </div>
       <div className='flex flex-col justify-between flex-1 p-5'>
