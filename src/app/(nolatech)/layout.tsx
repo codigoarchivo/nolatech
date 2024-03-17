@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { NavTop } from '../ui/NavTop';
 import { NavSub } from '../ui/NavSub';
 import { Footer } from '../ui/Footer';
@@ -8,14 +9,10 @@ type LayoutProps = {
   children: React.ReactNode;
 };
 
-type M = Pick<LayoutProps, 'params'>;
-
-export async function generateMetadata({ params }: M) {
-  return {
-    title: `Home: nolatech`,
-    description: 'nolatech',
-  };
-}
+export const metadata: Metadata = {
+  title: `Home: Lorem ipsum dolor sit amet, consetetur`,
+  description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+};
 
 export default function HomeLayout({ params, children }: LayoutProps) {
   return (
