@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image';
-import JoinU from '../../../../public/assets/Join Us.png';
+import JoinU from '../../../../public/assets/JoinUs.png';
 import JoinUsDark from '../../../../public/assets/JoinUsDark.png';
 import { useUIStore } from '@/store';
 
