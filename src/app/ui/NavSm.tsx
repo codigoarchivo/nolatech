@@ -1,9 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { useUIStore } from '@/store';
 import icongrab from '../../../public/assets/icongrab.png';
+import { navLink } from './nav_link';
 
 export const NavSm = () => {
   const [show, setshow] = useState(false);
@@ -33,7 +35,7 @@ export const NavSm = () => {
       } w-full z-20 border-gray-200 bg-primary shadow-custom1`}
     >
       <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
-        <a href='#' className='flex items-center space-x-3 rtl:space-x-reverse'>
+        <Link href='#' title='link image' className='flex items-center space-x-3 rtl:space-x-reverse'>
           <Image
             src={icongrab}
             className='h-8 w-20 object-fill absolute z-[-1]'
@@ -44,7 +46,7 @@ export const NavSm = () => {
             quality={100}
             sizes='100vw'
           />{' '}
-        </a>
+        </Link>
         <button
           onClick={() => setshow(!show)}
           data-collapse-toggle='navbar-hamburger'
@@ -72,39 +74,20 @@ export const NavSm = () => {
         </button>
         <div className={`${show ? '' : 'hidden'} w-full`}>
           <ul className='flex flex-col font-medium mt-4 rounded-lg bg-white shadow-custom1'>
-            <li>
-              <a
-                href='#'
-                className='block py-2 px-3 text-white bg-primary rounded '
-                aria-current='page'
+            {navLink.map((item, key, arr) => (
+              <li
+                key={key}
+                className={`${
+                  key === 0
+                    ? 'text-white bg-primary rounded'
+                    : 'text-gray-900 rounded hover:bg-gray-100'
+                } block py-2 px-3`}
               >
-                Home
-              </a>
-            </li>
-            <li>
-              <a
-                href='#'
-                className='block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 '
-              >
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href='#'
-                className='block py-2 px-3 text-gray-900 rounded hover:bg-gray-100'
-              >
-                Pricing
-              </a>
-            </li>
-            <li>
-              <a
-                href='#'
-                className='block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 '
-              >
-                Contact
-              </a>
-            </li>
+                <Link href={item.link} title={item.name}>
+                  <span>{item.name}</span>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
