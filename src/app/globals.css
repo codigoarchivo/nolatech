@@ -18,22 +18,13 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: white
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-}
-body {
-  background: #333;
-  height: 2000px;
 }
 
 .social {
@@ -46,31 +37,15 @@ body {
 
 .social li a {
   display: block;
-  height: 20px;
+  height: 40px;
   width: 40px;
-  background: #222;
-  border-bottom: 1px solid #333;
   font: normal normal normal 16px/20px "FontAwesome", "Source Sans Pro",
     Helvetica, Arial, sans-serif;
-  color: #fff;
   -webkit-font-smoothing: antialiased;
   padding: 10px;
   text-decoration: none;
   text-align: center;
   transition: background 0.5s ease 0.3ms;
-}
-
-.social li:first-child a:hover {
-  background: #3b5998;
-}
-.social li:nth-child(2) a:hover {
-  background: #00acee;
-}
-.social li:nth-child(3) a:hover {
-  background: #ea4c89;
-}
-.social li:nth-child(4) a:hover {
-  background: #dd4b39;
 }
 
 .social li:first-child a {
@@ -84,8 +59,6 @@ body {
   width: 100px;
   float: left;
   text-align: center;
-  background: #222;
-  color: #fff;
   margin: -25px 74px;
   padding: 8px;
   transform-origin: 0;
@@ -105,7 +78,7 @@ body {
   left: -20px;
   top: 7px;
   border: 10px solid transparent;
-  border-right: 10px solid #222;
+  border-right: 10px solid #fff;
 }
 
 .social li a:hover span {
