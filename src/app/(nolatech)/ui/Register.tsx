@@ -86,6 +86,11 @@ export const Register = () => {
             type='text'
             placeholder='Department'
           />
+          <AlertForm
+            message={'Department is require'}
+            type={'error'}
+            error={errors.department?.type}
+          />
         </div>
         <div className='col-span-6'>
           <textarea
@@ -100,7 +105,7 @@ export const Register = () => {
           />
         </div>
         <div className='col-span-6 sm:col-span-3'>
-          <button className=' w-max inline-block rounded-md bg-primary px-4 md:px-10 py-2 md:py-4 text-xs md:text-base shadow-custom1 text-center  font-semibold text-white outline-none transition duration-500 ease-in-out transform hover:bg-tertiary focus-visible:ring active:bg-secondary'>
+          <button type='submit' className=' w-max inline-block rounded-md bg-primary px-4 md:px-10 py-2 md:py-4 text-xs md:text-base shadow-custom1 text-center  font-semibold text-white outline-none transition duration-500 ease-in-out transform hover:bg-tertiary focus-visible:ring active:bg-secondary'>
             I’M IN
           </button>
         </div>
