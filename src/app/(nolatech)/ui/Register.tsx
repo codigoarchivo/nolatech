@@ -30,7 +30,7 @@ export const Register = () => {
         <div className='col-span-6 sm:col-span-3'>
           <input
             {...register('firstName', { required: true })}
-            className='w-full rounded-md border shadow-custom1 border-textPrimary bg-white py-3 px-6 text-base font-medium text-gray-500 outline-none focus:border-primary transition duration-500 ease-in-out transform  focus:shadow-md'
+            className='w-full rounded-md border shadow-custom1 border-textPrimary bg-white py-2 md:py-3 px-6 text-base font-medium text-gray-500 outline-none focus:border-primary transition duration-500 ease-in-out transform  focus:shadow-md'
             type='text'
             placeholder='First Name'
           />
@@ -43,7 +43,7 @@ export const Register = () => {
         <div className='col-span-6 sm:col-span-3'>
           <input
             {...register('lastName', { required: true })}
-            className='w-full rounded-md border shadow-custom1 border-textPrimary bg-white py-3 px-6 text-base font-medium text-gray-500 outline-none focus:border-primary transition duration-500 ease-in-out transform  focus:shadow-md'
+            className='w-full rounded-md border shadow-custom1 border-textPrimary bg-white py-2 md:py-3 px-6 text-base font-medium text-gray-500 outline-none focus:border-primary transition duration-500 ease-in-out transform  focus:shadow-md'
             type='text'
             placeholder='Last Name'
           />
@@ -56,7 +56,7 @@ export const Register = () => {
         <div className='col-span-6 sm:col-span-3'>
           <input
             {...register('phone', { required: true })}
-            className='w-full rounded-md border shadow-custom1 border-textPrimary bg-white py-3 px-6 text-base font-medium text-gray-500 outline-none focus:border-primary transition duration-500 ease-in-out transform  focus:shadow-md'
+            className='w-full rounded-md border shadow-custom1 border-textPrimary bg-white py-2 md:py-3 px-6 text-base font-medium text-gray-500 outline-none focus:border-primary transition duration-500 ease-in-out transform  focus:shadow-md'
             type='text'
             placeholder='Phone'
           />
@@ -69,7 +69,7 @@ export const Register = () => {
         <div className='col-span-6 sm:col-span-3'>
           <input
             {...register('email', { required: true })}
-            className='w-full rounded-md border shadow-custom1 border-textPrimary bg-white py-3 px-6 text-base font-medium text-gray-500 outline-none focus:border-primary transition duration-500 ease-in-out transform  focus:shadow-md'
+            className='w-full rounded-md border shadow-custom1 border-textPrimary bg-white py-2 md:py-3 px-6 text-base font-medium text-gray-500 outline-none focus:border-primary transition duration-500 ease-in-out transform  focus:shadow-md'
             type='text'
             placeholder='Email'
           />
@@ -82,7 +82,7 @@ export const Register = () => {
         <div className='col-span-6'>
           <input
             {...register('department', { required: true })}
-            className='w-full rounded-md border shadow-custom1 border-textPrimary bg-white py-3 px-6 text-base font-medium text-gray-500 outline-none focus:border-primary transition duration-500 ease-in-out transform  focus:shadow-md'
+            className='w-full rounded-md border shadow-custom1 border-textPrimary bg-white py-2 md:py-3 px-6 text-base font-medium text-gray-500 outline-none focus:border-primary transition duration-500 ease-in-out transform  focus:shadow-md'
             type='text'
             placeholder='Department'
           />
@@ -90,7 +90,7 @@ export const Register = () => {
         <div className='col-span-6'>
           <textarea
             {...register('message', { required: true })}
-            className='w-full rounded-md border shadow-custom1 border-textPrimary bg-white py-3 px-6 text-base font-medium text-gray-500 outline-none focus:border-primary transition duration-500 ease-in-out transform  focus:shadow-md'
+            className='w-full rounded-md border shadow-custom1 border-textPrimary bg-white py-2 md:py-3 px-6 text-base font-medium text-gray-500 outline-none focus:border-primary transition duration-500 ease-in-out transform  focus:shadow-md'
             placeholder='Mensajse'
           ></textarea>
           <AlertForm
@@ -100,10 +100,7 @@ export const Register = () => {
           />
         </div>
         <div className='col-span-6 sm:col-span-3'>
-          <button
-            type='submit'
-            className='inline-block rounded-md bg-primary px-16 py-3 shadow-custom1 text-center text-sm font-semibold text-white outline-none transition duration-500 ease-in-out transform hover:bg-secondary focus-visible:ring active:bg-secondary md:text-base'
-          >
+          <button className=' w-max inline-block rounded-md bg-primary px-4 md:px-10 py-2 md:py-4 text-xs md:text-base shadow-custom1 text-center  font-semibold text-white outline-none transition duration-500 ease-in-out transform hover:bg-tertiary focus-visible:ring active:bg-secondary'>
             I’M IN
           </button>
         </div>
