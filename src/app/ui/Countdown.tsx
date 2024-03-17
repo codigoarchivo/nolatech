@@ -1,22 +1,26 @@
 'use client';
 
+import React, { useState, useEffect } from 'react';
 import { startCountdown } from '@/utils';
 
-import React, { useState, useEffect } from 'react';
 
 interface ICountdown {
   targetDate: Date;
 }
 
 export const Countdown = ({ targetDate }: ICountdown) => {
-  const [timeLeft, setTimeLeft] = useState(startCountdown(targetDate));
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setTimeLeft(startCountdown(targetDate));
     }, 1000);
 
-    // Limpiar el intervalo cuando el componente se desmonte
     return () => clearTimeout(timer);
   });
 
@@ -31,7 +35,7 @@ export const Countdown = ({ targetDate }: ICountdown) => {
             days
           </span>
         </div>
-        <hr className='divide-y-2 text-white/50' />
+        <div className='inline-block h-18 min-h-[1em] shadow-custom1 w-0.5 self-stretch bg-white/50'></div>
         <div className='grid text-center'>
           <span className='font-bold text-2xl md:text-4xl lg:text-5xl'>
             {timeLeft.hours}
@@ -40,7 +44,7 @@ export const Countdown = ({ targetDate }: ICountdown) => {
             Hour
           </span>
         </div>
-        <hr className='divider' />
+        <div className='inline-block h-18 min-h-[1em] shadow-custom1 w-0.5 self-stretch bg-white/50'></div>
         <div className='grid text-center'>
           <span className='font-bold text-2xl md:text-4xl lg:text-5xl'>
             {timeLeft.minutes}
@@ -49,7 +53,7 @@ export const Countdown = ({ targetDate }: ICountdown) => {
             Minutes
           </span>
         </div>
-        <hr className='divider' />
+        <div className='inline-block h-18 min-h-[1em] shadow-custom1 w-0.5 self-stretch bg-white/50'></div>
         <div className='grid text-center'>
           <span className='font-bold text-2xl md:text-4xl lg:text-5xl'>
             {timeLeft.seconds}{' '}
