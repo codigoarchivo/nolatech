@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useUIStore } from '@/store';
-import icongrab from '../../../public/assets/icongrab.png';
 import { navLink } from './nav_link';
+import icongrabWhite from '../../../public/assets/icongrabWhite.png';
 
 export const NavSm = () => {
   const [show, setshow] = useState(false);
@@ -34,10 +34,10 @@ export const NavSm = () => {
         isSideMenuOpen ? 'fixed' : 'hidden'
       } w-full z-20 border-gray-200 bg-primary shadow-custom1`}
     >
-      <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4'>
+      <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2 md:p-4'>
         <Link href='#' title='link image' className='flex items-center space-x-3 rtl:space-x-reverse'>
           <Image
-            src={icongrab}
+            src={icongrabWhite}
             className='h-8 w-20 object-fill absolute z-[-1]'
             alt={'prb_header'}
             title={'Prb_Header'}
