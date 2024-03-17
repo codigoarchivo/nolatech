@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Live, Play } from '@/components';
+import { Live, ModalVideo, Play } from '@/components';
 import { useUIStore } from '@/store';
 
 export const NavTop = () => {
@@ -22,15 +22,22 @@ export const NavTop = () => {
           </div>
           <p className='text-lg py-4 text-center'>
             <span>Lorem ipsu</span>{' '}
-            <span className='text-secondary'>dolor sit amet</span>
+            <strong className='text-secondary'>dolor sit amet</strong>
           </p>
-          <button className='py-4 bg-tertiary hover:bg-secondary text-white px-2 md:px-8 font-bold font-weight-bold text-xs lg:text-xl md:text-lg sm:text-md h-full flex gap-2 md:gap-8 transition duration-500 ease-in-out transform justify-center uppercase items-center  cursor-pointer'>
-            {' '}
-            <span>Join Now!</span>
-            <Play
-              className={'text-white w-6 h-6 lg:w-10 sm:w-8  lg:h-10 sm:h-8'}
-            />
-          </button>
+          <ModalVideo
+            title={
+              <>
+                <span>Join Now!</span>
+                <Play
+                  className={
+                    'text-white w-6 h-6 lg:w-10 sm:w-8  lg:h-10 sm:h-8'
+                  }
+                />
+              </>
+            }
+            cancel={'cancel'}
+            className='py-4 bg-tertiary hover:bg-secondary text-white px-2 md:px-8 font-bold font-weight-bold text-xs lg:text-xl md:text-lg sm:text-md h-full flex gap-2 md:gap-8 transition duration-500 ease-in-out transform justify-center uppercase items-center  cursor-pointer'
+          />
         </div>
       </div>
     </nav>
