@@ -182,33 +182,31 @@ export default function Home() {
         </div>
       </section>
       <section>
-        <div className=''>
-          <div className='container mx-auto py-20 shadow-custom1 p-10 relative'>
-            <Image
-              src={Pic6White}
-              className='absolute inset-0 h-full w-full object-fill z-[-1]'
-              alt={'prb_header'}
-              title={'Prb_Header'}
-              width='0'
-              height='0'
-              quality={100}
-              sizes='100vw'
-            />
-            <div className='absolute z-[-2] inset-0 bg-slate-50 sm:from-sebg-secondary/95 sm:to-sebg-secondary/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l'></div>
-            <div className='flex items-center justify-center'>
-              <div className=''>
-                <h3 className='text-primary text-center font-bold my-20 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl'>
-                  <span>Lorem ipsum </span>{' '}
-                  <span className='text-secondary'>dolor sit amet</span>
-                </h3>
-                <ListImage />
-              </div>
+        <div className='container mx-auto py-10 md:py-20 shadow-custom1 p-4 md:p-10 relative'>
+          <Image
+            src={Pic6White}
+            className='absolute inset-0 h-full w-full object-fill z-[-1]'
+            alt={'prb_header'}
+            title={'Prb_Header'}
+            width='0'
+            height='0'
+            quality={100}
+            sizes='100vw'
+          />
+          <div className='absolute z-[-2] inset-0 bg-slate-50 sm:from-sebg-secondary/95 sm:to-sebg-secondary/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l'></div>
+          <div className='flex items-center justify-center'>
+            <div className=''>
+              <h3 className='text-primary text-center font-bold my-20 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl'>
+                <span>Lorem ipsum </span>{' '}
+                <span className='text-secondary'>dolor sit amet</span>
+              </h3>
+              <ListImage />
             </div>
-            <div className='flex w-full justify-center py-10'>
-              <button className=' w-max inline-block rounded-md bg-primary px-4 md:px-10 py-2 md:py-4 text-xs md:text-base shadow-custom1 text-center  font-semibold text-white outline-none transition duration-500 ease-in-out transform hover:bg-tertiary focus-visible:ring active:bg-secondary'>
-                VIEW ALL
-              </button>
-            </div>
+          </div>
+          <div className='flex w-full justify-center py-10'>
+            <button className=' w-max inline-block rounded-md bg-primary px-4 md:px-10 py-2 md:py-4 text-xs md:text-base shadow-custom1 text-center  font-semibold text-white outline-none transition duration-500 ease-in-out transform hover:bg-tertiary focus-visible:ring active:bg-secondary'>
+              VIEW ALL
+            </button>
           </div>
         </div>
       </section>
