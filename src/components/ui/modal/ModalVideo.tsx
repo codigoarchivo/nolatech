@@ -12,10 +12,10 @@ export const ModalVideo = (props: IModalVideo) => {
   const [isOpenVideo, setIsOpenVideo] = useState(false);
   return (
     <>
-      <div>
+      <div  onClick={() => setIsOpenVideo(!isOpenVideo)}>
         {isOpenVideo && (
           <div
-            className='relative z-30'
+            className='absolute z-30'
             aria-labelledby='modal-title'
             role='dialog'
             aria-modal='true'
