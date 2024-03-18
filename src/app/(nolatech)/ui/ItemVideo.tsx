@@ -5,16 +5,16 @@ import { IListVideo } from '@/interfaces';
 export const ItemVideo = (props: IListVideo) => {
   return (
     <div className='flex flex-col mb-12 overflow-hidden cursor-pointer shadow-custom1'>
-      <div className='text-white hover:text-primary  flex-shrink-0 relative flex justify-center items-center'>
+      <div className='text-white hover:text-primary  flex-shrink-0 relative flex justify-center items-center w-full h-52'>
         <div className='absolute z-[1] inset-0 bg-secondary/35 sm:from-sebg-secondary/95 sm:to-sebg-secondary/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l'></div>
         <Play
           className={
-            'w-10 h-10 lg:w-20 sm:w-14  lg:h-20 sm:h-14 absolute z-10 transition duration-500 ease-in-out transform'
+            'w-10 h-10 lg:w-20 sm:w-14 lg:h-20 sm:h-14 absolute z-10 transition duration-500 ease-in-out transform'
           }
         />
         <Image
           src={props.image}
-          className='w-full h-52'
+          className='w-full h-full absolute'
           alt={props.name}
           title={props.name}
           width='0'
@@ -25,7 +25,7 @@ export const ItemVideo = (props: IListVideo) => {
         <ModalVideo
           title={''}
           cancel={'cancel'}
-          className='absolute z-50 w-full h-full'
+          className='absolute z-10 w-full h-full'
         />
       </div>
       <div className='flex flex-col justify-between flex-1 p-5'>
