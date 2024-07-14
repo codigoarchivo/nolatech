@@ -3,7 +3,7 @@
 import React from 'react';
 import { Live, ModalVideo, Play } from '@/components';
 import { useUIStore } from '@/store';
-import { Dropdown } from '@/components/ui/dropdown';
+import { Dropdown } from '@/components/ui/dropdown/Dropdown';
 
 export const NavTop = () => {
   const isSideMenuOpen = useUIStore((state) => state.isSideMenuOpen);
