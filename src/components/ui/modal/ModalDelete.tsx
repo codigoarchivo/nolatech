@@ -33,6 +33,7 @@ export const ModalDelete = (props: IModalDelete) => {
     router.push(`${props.back}`);
     setIsOpenDelete(false);
     toast.success("Registro exitoso.");
+    router.refresh()
   };
 
   return (
