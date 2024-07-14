@@ -18,7 +18,7 @@ export const Search = (props: ISearch) => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    let path = `/${props.route}`;
+    let path = `${process.env.NEXT_PUBLIC_PATH_BASE}${props.route}`;
     router.push(query ? `${path}?search=${query}` : query);
     setQuery('')
   };
