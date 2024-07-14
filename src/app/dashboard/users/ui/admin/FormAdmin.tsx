@@ -8,6 +8,7 @@ import { AlertForm } from '@/components/ui/vigilant/AlertForm';
 import { IUserForm } from '@/interfaces/user.interface';
 import { update_user } from '@/actions/user/edit_user';
 import { Upload } from '@/components/ui/images/Upload';
+import { useUIImages } from '@/store/ui/gestor-images';
 
 interface Props {
   data: IUserForm;
@@ -15,22 +16,25 @@ interface Props {
 }
 
 export const FormAdmin = (props: Props) => {
+  const setImages = useUIImages((state) => state.setImages);
+  const images = useUIImages((state) => state.images);
   const router = useRouter();
   const { data: session } = useSession();
   const token = session?.user.accessToken;
 
+  const profile = images ? images : props.data?.profile_image
+
   const {
     handleSubmit,
     register,
-    reset,
     formState: { errors },
   } = useForm<IUserForm>({
     defaultValues: {
       first_name: props.data?.first_name ?? '',
       last_name: props.data?.last_name ?? '',
       email: props.data?.email ?? '',
-      is_admin: `${props.data?.is_admin}` ?? '',
-      profile_image: props.data?.profile_image ?? '',
+      is_admin: `${props.data?.is_admin}`,
+      profile_image: `${profile ?? ''}`,
     },
   });
 
@@ -44,8 +48,7 @@ export const FormAdmin = (props: Props) => {
     formData.append('first_name', data.first_name ?? '');
     formData.append('last_name', data.last_name ?? '');
     formData.append('email', data.email ?? '');
-    formData.append('is_admin', data.is_admin ?? '');
-    formData.append('profile_image', data.profile_image ?? '');
+    formData.append('profile_image', `${profile ?? ''}`);
     formData.append('token', token ?? '');
     formData.append('base', props.base ?? '');
 
@@ -57,7 +60,8 @@ export const FormAdmin = (props: Props) => {
     }
 
     toast.success('Registro exitoso.');
-    reset();
+    setImages(null)
+    router.refresh()
   };
 
   return (
@@ -128,31 +132,14 @@ export const FormAdmin = (props: Props) => {
                 error={errors.email?.type}
               />
             </div>
-            <div className='col-span-6 sm:col-span-3'>
-              <label className='block text-sm font-medium text-textSecondary'>
-                Rol
-              </label>
-              <select
-                {...register('is_admin', { required: true })}
-                className='w-full rounded-md border shadow-custom1 border-textPrimary bg-white py-3 px-6 text-base font-medium text-gray-500 outline-none focus:border-primary transition duration-500 ease-in-out transform  focus:shadow-md'
-              >
-                <option>true</option>
-                <option>false</option>
-              </select>
-              <AlertForm
-                message={`Rol es requerido`}
-                type={'error'}
-                error={errors.is_admin?.type}
-              />
-            </div>
             <div className='col-span-6 sm:col-span-3 grid gap-3'>
               <Upload
                 // list images
-                images={[]}
+                images={[`${profile ?? ''}`]}
                 // text change photo
                 photo={'Foto'}
                 change={'Cambiar'}
-                // text draggable
+                // text File
                 upload={'Subir un archivo'}
                 cover={'Foto de portada'}
                 drag={'arrastrar '}
@@ -174,7 +161,8 @@ export const FormAdmin = (props: Props) => {
           <button
             type='button'
             onClick={() => {
-              router.push('/dashboard'), reset();
+              router.push('/dashboard')
+              setImages(null)
             }}
             className='inline-flex justify-center py-2 px-4 border border-transparent shadow-custom1 text-sm font-medium rounded-md text-white bg-primary hover:bg-secondary transition duration-500 ease-in-out transform'
           >
