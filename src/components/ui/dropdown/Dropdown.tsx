@@ -60,7 +60,7 @@ export const Dropdown = (props: IDropdown) => {
           >
             <div className='flex items-center font-medium text-gray-900 whitespace-nowrap dark:text-white'>
               <Image
-                src={profileI}
+                src={profile?.profile_image ? profile?.profile_image : profileI}
                 className='h-6 w-6 rounded-full object-cover shadow-custom1'
                 alt='Man'
                 width='0'
