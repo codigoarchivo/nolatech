@@ -1,7 +1,7 @@
 'use client';
 
+import { File } from './File';
 import { IUpload } from './interface';
-import { Draggable } from './Draggable';
 import { ListImages } from './ListImages';
 
 export const Upload = (props: IUpload) => {
@@ -25,8 +25,7 @@ export const Upload = (props: IUpload) => {
         <label className='block text-sm font-medium text-gray-700'>
           {props.cover}
         </label>
-        <Draggable
-          pdf={props.permission}
+        <File
           one={one}
           drag={props.drag}
           or={props.or}

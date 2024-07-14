@@ -24,5 +24,5 @@ export interface IUpload {
 }
 
 
-export type IDraggable = Pick<IUpload, 'images' | 'register' | 'upload' | 'or' | 'drag' | 'up' | 'one'> 
+export type IFile = Pick<IUpload, 'images' | 'register' | 'upload' | 'or' | 'drag' | 'up' | 'one'> 
 
