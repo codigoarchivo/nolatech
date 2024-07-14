@@ -16,7 +16,7 @@ export const NoResults = (props: INoResults) => {
   const page = searchParams.get('page');
 
   const handleInitial = () => {
-    let path = `/${props.route}`;
+    let path = `${process.env.NEXT_PUBLIC_PATH_BASE}/${props.route}`;
     (search || page) && router.push(path);
   };
 
