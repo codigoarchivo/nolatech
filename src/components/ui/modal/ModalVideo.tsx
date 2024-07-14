@@ -51,7 +51,7 @@ export const ModalVideo = (props: IModalVideo) => {
                     <button
                       onClick={() => setIsOpenVideo(!isOpenVideo)}
                       type='button'
-                      className='inline-flex text-white justify-center py-2 px-4 border border-transparent shadow-custom1 text-sm font-medium rounded-md text-textPrimary bg-primary hover:bg-secondary transition duration-500 ease-in-out transform'
+                      className='inline-flex text-white justify-center py-2 px-4 border border-transparent shadow-custom1 text-sm font-medium rounded-md text-white bg-primary hover:bg-secondary transition duration-500 ease-in-out transform'
                     >
                       {props.cancel}
                     </button>
