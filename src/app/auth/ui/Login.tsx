@@ -38,7 +38,8 @@ export const Login = () => {
       redirect: false,
     });
 
-    if (!resp?.ok) {
+    
+    if (!resp?.ok || !resp?.code) {
       toast.error(`No se recibieron datos válidos en la respuesta.`);
       return;
     }
