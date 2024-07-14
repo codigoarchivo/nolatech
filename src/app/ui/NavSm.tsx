@@ -32,7 +32,7 @@ export const NavSm = () => {
     <nav
       className={`${
         isSideMenuOpen ? 'fixed' : 'hidden'
-      } w-full z-20 border-gray-200 bg-primary shadow-custom1`}
+      } w-full z-20 border-gray-200 bg-primary shadow-custom1 top-0`}
     >
       <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2 md:p-4'>
         <Link href='#' title='link image' className='flex items-center space-x-3 rtl:space-x-reverse'>
@@ -65,9 +65,9 @@ export const NavSm = () => {
           >
             <path
               stroke='currentColor'
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              stroke-width='2'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+              strokeWidth='2'
               d='M1 1h15M1 7h15M1 13h15'
             />
           </svg>
