@@ -9,11 +9,11 @@ interface Iupdate_user {
 
 export const update_user = async (register: Iupdate_user) => {
   try {
+    
     const formData = {
       first_name: register.first_name,
       last_name: register.last_name,
       email: register.email,
-      is_admin: register.is_admin,
       profile_image: register.profile_image,
     };
 
